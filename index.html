@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">PETROV</h1>
+    </header>
+    <main>
+ 
+      <div class = 'baground_calc'>
+          <input class="display" readonly>
+          <div class='Numeric_keys'>
+  
+               <div class ='column_calc'>
+                  <button onclick="appendToDispaly('%')" class="button_type_calc">
+                      %
+                  </button>
+                  <button onclick="ClearDispaly()" class="button_type_calc">
+                      CE
+                  </button>
+                  <button onclick="ClearDispaly()" class="button_type_calc">
+                      C
+                  </button>
+                    <button onclick="appendToDispaly('*')"  class="button_type_calc">
+                      *
+                  </button>
+              </div>
+  
+              <div class ='column_calc'>
+                  <button onclick="appendToDispaly('7')" class="button_calc">
+                      7
+                  </button>
+                  <button onclick="appendToDispaly('8')" class="button_calc">
+                      8
+                  </button>
+                  <button onclick="appendToDispaly('9')" class="button_calc">
+                      9
+                  </button>
+                  <button onclick="appendToDispaly('/')" class="button_type_calc">
+                      /
+                  </button>
+              </div>
+                   <div class ='column_calc'>
+                  <button onclick="appendToDispaly('4')"  class="button_calc">
+                      4
+                  </button>
+                  <button onclick="appendToDispaly('5')" class="button_calc">
+                      5
+                  </button>
+                  <button onclick="appendToDispaly('6')" class="button_calc">
+                      6
+                  </button>
+                  <button onclick="appendToDispaly('-')" class="button_type_calc">
+                      -
+                  </button>
+              </div>
+                   <div class ='column_calc'>
+                  <button onclick="appendToDispaly('1')" class="button_calc">
+                      1
+                  </button>
+                  <button onclick="appendToDispaly('2')" class="button_calc">
+                      2
+                  </button>
+                  <button onclick="appendToDispaly('3')" class="button_calc">
+                      3
+                  </button>
+                  <button onclick="appendToDispaly('+')"  class="button_type_calc">
+                      +
+                  </button>
+              </div>
+              <div class ='column_calc'>
+                <button onclick="Calculate()"  class="button_type_calc">
+                      =
+                </button>
+              </div>
+          </div>
+      </div>
+    </main>
+ 
+    <script src="script.js"></script>
+    
+</body>
+</html>

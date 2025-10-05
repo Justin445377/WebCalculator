@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box; /* чтобы padding/margin не увеличивали ширину */
+    max-width: 100vw;       /* все блоки не больше экрана */
+}
+
+
+body{
+    background: linear-gradient(270deg, #0f172a, #4f46e5, #1e293b);
+    overflow-x: hidden;
+    width: 100vw;  
+}
+main{
+    width: 100%;
+    display: grid;
+    place-items: center; 
+     align-content: center;
+}
+header{
+    display: flex;
+    justify-content: flex-start;
+}
+.title{
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.column_calc{
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+}
+.Numeric_keys{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+.baground_calc{
+    display: grid;
+    place-items: center; 
+    height: 100vh;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);     
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;     
+}
+
+.display{
+    background-color: aqua;
+    width: 90%;
+    height: 50%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);     
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.button_calc,
+ .button_type_calc{
+    color: white;
+    border-radius: 10px;
+    font-size: 2em; 
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.224);
+    backdrop-filter: blur(10px);     
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+.button_type_calc:hover{
+    border: 1px solid rgba(255, 255, 255, 0.877);
+
+}
+.button_calc:hover{
+    border: 1px solid rgba(255, 255, 255, 0.877);
+
+}
+
+/* Большие экраны */
+@media (max-width: 1300px) {
+    .baground_calc {
+        width: 40%;
+        padding: 10px;
+        height: 80vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 100px;
+        height: 100px;
+        font-size: 2em;
+    }
+}
+
+/* Средние экраны */
+@media (max-width: 1116px) {
+    .baground_calc {
+        width: 40%;
+        padding: 10px;
+        height: 70vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 90px;
+        height: 90px;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1015px) {
+    .baground_calc {
+        width: 40%;
+        padding: 10px;
+        height: 70vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 968px) {
+    .baground_calc {
+        width: 50%;
+        padding: 10px;
+        height: 70vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 75px;
+        height: 75px;
+        font-size: 2em;
+    }
+
+    .display {
+        height: 40%;
+    }
+}
+
+/* Планшеты и небольшие телефоны */
+@media (max-width: 700px) {
+    .baground_calc {
+        width: 70%;
+        padding: 10px;
+        height: 60vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    .display {
+        height: 35%;
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .baground_calc {
+        width: 80%;
+        padding: 10px;
+        height: 60vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 60px;
+        height: 60px;
+        font-size: 1em;
+    }
+
+    .display {
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .baground_calc {
+        width: 95%;
+        padding: 8px;
+        height: 60vh;
+    }
+
+    .button_calc,
+    .button_type_calc {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9em;
+    }
+
+    .display {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}
