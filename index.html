@@ -17,90 +17,46 @@
             <div class='Numeric_keys'>
 
                 <div class='column_calc'>
-                    <button onclick="appendToDispaly('%')" class="button_type_calc">%</button>
-                    <button onclick="ClearDispaly()" class="button_type_calc">CE</button>
-                    <button onclick="ClearDispaly()" class="button_type_calc">C</button>
-                    <button onclick="appendToDispaly('*')"  class="button_type_calc">*</button>
+                    <button onclick="backspace()" class="button_type_calc">⌫</button>
+                    <button onclick="ClearDisplay()" class="button_type_calc">CE</button>
+                    <button onclick="appendToDisplay('%')" class="button_type_calc">%</button>
+                    <button onclick="appendToDisplay('*')"  class="button_type_calc">*</button>
                 </div>
 
                 <div class='column_calc'>
-                    <button onclick="appendToDispaly('7')" class="button_calc">7</button>
-                    <button onclick="appendToDispaly('8')" class="button_calc">8</button>
-                    <button onclick="appendToDispaly('9')" class="button_calc">9</button>
-                    <button onclick="appendToDispaly('/')" class="button_type_calc">/</button>
+                    <button onclick="appendToDisplay('7')" class="button_calc">7</button>
+                    <button onclick="appendToDisplay('8')" class="button_calc">8</button>
+                    <button onclick="appendToDisplay('9')" class="button_calc">9</button>
+                    <button onclick="appendToDisplay('/')" class="button_type_calc">/</button>
                 </div>
 
                 <div class='column_calc'>
-                    <button onclick="appendToDispaly('4')" class="button_calc">4</button>
-                    <button onclick="appendToDispaly('5')" class="button_calc">5</button>
-                    <button onclick="appendToDispaly('6')" class="button_calc">6</button>
-                    <button onclick="appendToDispaly('-')" class="button_type_calc">-</button>
+                    <button onclick="appendToDisplay('4')" class="button_calc">4</button>
+                    <button onclick="appendToDisplay('5')" class="button_calc">5</button>
+                    <button onclick="appendToDisplay('6')" class="button_calc">6</button>
+                    <button onclick="appendToDisplay('-')" class="button_type_calc">-</button>
                 </div>
 
                 <div class='column_calc'>
-                    <button onclick="appendToDispaly('1')" class="button_calc">1</button>
-                    <button onclick="appendToDispaly('2')" class="button_calc">2</button>
-                    <button onclick="appendToDispaly('3')" class="button_calc">3</button>
-                    <button onclick="appendToDispaly('+')"  class="button_type_calc">+</button>
+                    <button onclick="appendToDisplay('1')" class="button_calc">1</button>
+                    <button onclick="appendToDisplay('2')" class="button_calc">2</button>
+                    <button onclick="appendToDisplay('3')" class="button_calc">3</button>
+                    <button onclick="appendToDisplay('+')"  class="button_type_calc">+</button>
                 </div>
 
                 <div class='column_calc'>
                     <button onclick="toggleSign()" class="button_type_calc">+/-</button>
-                    <button onclick="appendToDispaly('0')" class="button_calc">0</button>
+                    <button onclick="appendToDisplay('0')" class="button_calc">0</button>
                     <button onclick="appendComma()" class="button_calc">,</button>
                     <button onclick="Calculate()" class="button_type_calc">=</button>
+                </div>
+                <div class='column_calc'>
+                    <!-- Backspace-Taste entfernt, da oben vorhanden -->
                 </div>
 
             </div>
         </div>
     </main>
-
-    <script>
-        function appendToDispaly(value) {
-            document.querySelector(".display").value += value;
-        }
-
-        function ClearDispaly() {
-            document.querySelector(".display").value = "";
-        }
-
-        function Calculate() {
-            let display = document.querySelector(".display");
-            try {
-                display.value = eval(display.value);
-            } catch {
-                display.value = "Error";
-            }
-        }
-
-        function appendComma() {
-            let display = document.querySelector(".display");
-            let parts = display.value.split(/[\+\-\*\/]/);
-            let currentNumber = parts[parts.length - 1];
-
-            if (!currentNumber.includes(".")) {
-                display.value += ".";
-            }
-        }
-
-        function toggleSign() {
-            let display = document.querySelector(".display");
-            let parts = display.value.split(/([\+\-\*\/])/); 
-            
-            // Letzte Zahl finden
-            for (let i = parts.length - 1; i >= 0; i--) {
-                if (!isNaN(parts[i]) && parts[i] !== "") {
-                    if (parts[i].startsWith("-")) {
-                        parts[i] = parts[i].substring(1);
-                    } else {
-                        parts[i] = "-" + parts[i];
-                    }
-                    break;
-                }
-            }
-
-            display.value = parts.join("");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
